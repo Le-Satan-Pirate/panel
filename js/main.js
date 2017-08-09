@@ -22,6 +22,16 @@ function getCookie(cname) {
     return "";
 }
 
+function getMousePos(el, evt) {
+	var rect = el.getBoundingClientRect();
+	return {
+		x: (evt.clientX - rect.left),
+		y: (evt.clientY - rect.top),
+		w: rect.width,
+		h: rect.height
+	};
+}
+
 jQuery(function($) {
 
     var $window = $(window); //$window.width() - for example .___.
@@ -30,8 +40,17 @@ jQuery(function($) {
     $('.select1').selectpicker();
     $('.select2').selectpicker();
 
+	var opts = {
+		handle: '.grid-stack-item-content'
+	};
 	$('.grid-stack').gridstack({
+		handle: opts.handle || '.grid-stack-item-content',
 		width: 16,
+		draggable: {
+			handle: '.grid-stack-item-content',
+			scroll: true,
+			appendTo: 'body'
+		},
 		verticalMargin: '0.01px' // !!! BUG: при нулевых значениях начинается мистика и может неадекватно повести себя перемещения блоков по-вертикали -_-
 	}); // Инициализируем gridstack сетку
 	
@@ -130,4 +149,50 @@ jQuery(function($) {
 	TabMenu.assign('.right-side');
 	
 	//TabMenu.assign('.second-block');	// См. метку 'useless-sidebar?'
+	
+	/**
+	 *  Прокрутка по вертикали при наведении мышки на края блока. Some magic ^^
+	 */
+	var Scroller = {
+		_assign: {},
+		assign: function(id, params){
+			var el = document.getElementById(id);
+			if(!el){return 0;}
+			this._assign[id] = el;
+			el.style.overflow = 'hidden';
+			
+			params = params||{};
+			el._scrollerArea  = params.area || 32;
+			el._scrollerSpeed = params.speed || 1;
+			
+			var self = this;
+			el.onMouseMove = function(e, fork){	
+				!fork ? clearTimeout(this._scrollerTimer) : 0;
+				var mPos = getMousePos(el, e);
+				if(/*(mPos.y > 0)&&*/(mPos.y < this._scrollerArea)&&(el.scrollTop)){
+					el.scrollTop += /*-3;*/ (-1 - el.scrollHeight*0.005 * (1 - mPos.y/this._scrollerArea) * el._scrollerSpeed * (window.devicePixelRatio ? 1/window.devicePixelRatio: 1));
+				} else {					
+					if(/*(mPos.y < mPos.h)&&*/(mPos.h - mPos.y < this._scrollerArea)&&(el.scrollTop + mPos.h  < el.scrollHeight)){
+						el.scrollTop += /*4;*/ (2 + el.scrollHeight*0.005 * (1 - (mPos.h-mPos.y)/this._scrollerArea) * el._scrollerSpeed * (window.devicePixelRatio ? 1/window.devicePixelRatio: 1));
+					}
+				}
+				var $el = this;
+				this._scrollerTimer = setTimeout(function(){
+					$el.onMouseMove(e, true);
+				}, 20);
+			};
+			el.onMouseLeave = function(e){
+				clearTimeout(this._scrollerTimer);
+			};
+			el.addEventListener("mousemove", el.onMouseMove);
+			el.addEventListener("mouseout", el.onMouseLeave);			
+		}
+	};
+	window.Scroller = Scroller;
+	
+	Scroller.assign('graph', {
+		area: 48,
+		speed: 1.2
+	}); // Пример-"жертва" X_x
+	
 });
