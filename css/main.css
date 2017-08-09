@@ -894,3 +894,6 @@ header {
 #handle-block{
 	border: 1px solid #303435;
 }
+.plot .grid-stack-item{
+	top: 8px;
+}
