@@ -63,10 +63,12 @@ jQuery(function($) {
     }
 
     function customHeight() {
+		/*
         var height = $window.height() - $('header').height() - 8;
         $('.custom-scroll').height(height + 'px');
         statisticsHeight(height);
         $('.trades-block').css('max-height', height - 227 + 'px')
+		*/
     }
 
     customHeight();

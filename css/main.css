@@ -887,3 +887,10 @@ header {
 .grid-stack-item-content{
 	overflow: hidden !important;
 }
+
+#orders-block{
+	border: 1px solid #303435;
+}
+#handle-block{
+	border: 1px solid #303435;
+}
