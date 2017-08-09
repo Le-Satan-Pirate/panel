@@ -53,8 +53,8 @@ jQuery(function($) {
         });
     }
 
-   // $('.select1').selectpicker();
-   // $('.select2').selectpicker();
+    $('.select1').selectpicker();
+    $('.select2').selectpicker();
 
     function statisticsHeight(height) {
         if($window.width()<=1100) return false;
