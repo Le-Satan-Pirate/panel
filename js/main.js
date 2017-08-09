@@ -83,7 +83,7 @@ jQuery(function($) {
 		var gridSettings = getCookie('grid-settings');
 		if(gridSettings){
 			var elemState = [];
-			elemState = gridSettings.split(';');
+			elemState = gridSettings.split('/');
 			for(var i=0;i<elemState.length;i++){
 				var bParts = elemState[i].split(':');
 				var id = bParts[0];
@@ -114,7 +114,7 @@ jQuery(function($) {
 				+ ~~$e[i].getAttribute('data-gs-x') + ','
 				+ ~~$e[i].getAttribute('data-gs-y') + ','
 				+ ~~$e[i].getAttribute('data-gs-width') + ','
-				+ ~~$e[i].getAttribute('data-gs-height') + ';'
+				+ ~~$e[i].getAttribute('data-gs-height') + '/'
 			);
 		}
 		setCookie('grid-settings', state, 1000);
