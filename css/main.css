@@ -882,6 +882,7 @@ header {
 
 .grid-stack-item{
 	overflow: hidden;
+	margin: 0 !important;
 }
 .grid-stack-item-content{
 	overflow: hidden !important;

@@ -1,4 +1,4 @@
-function setCookie(cname, cvalue, exdays) {
+п»їfunction setCookie(cname, cvalue, exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires="+ d.toUTCString();
@@ -74,10 +74,12 @@ jQuery(function($) {
     $window.resize(customHeight)
 	
 	
-	$('.grid-stack').gridstack(); // Инициализируем gridstack сетку
+	$('.grid-stack').gridstack({
+		verticalMargin: '0.01px' // !!! BUG: РїСЂРё РЅСѓР»РµРІС‹С… Р·РЅР°С‡РµРЅРёСЏС… РЅР°С‡РёРЅР°РµС‚СЃСЏ РјРёСЃС‚РёРєР° Рё РјРѕР¶РµС‚ РЅРµР°РґРµРєРІР°С‚РЅРѕ РїРѕРІРµСЃС‚Рё СЃРµР±СЏ РїРµСЂРµРјРµС‰РµРЅРёСЏ Р±Р»РѕРєРѕРІ РїРѕ-РІРµСЂС‚РёРєР°Р»Рё -_-
+	}); // РРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј gridstack СЃРµС‚РєСѓ
 	
 	/**
-	 *  Прочитаем настройки из кукис-строки, которую распарсим ._.
+	 *  РџСЂРѕС‡РёС‚Р°РµРј РЅР°СЃС‚СЂРѕР№РєРё РёР· РєСѓРєРёСЃ-СЃС‚СЂРѕРєРё, РєРѕС‚РѕСЂСѓСЋ СЂР°СЃРїР°СЂСЃРёРј ._.
 	 */
 	(function(){
 		var gridSettings = getCookie('grid-settings');
@@ -102,8 +104,8 @@ jQuery(function($) {
 	})();
 	
 	/**
-	 *  При изменениях сетки запишем данные в кукисы
-	 *  ** WARNING ** : элемент сетки должен содержать аттрибут id! 
+	 *  РџСЂРё РёР·РјРµРЅРµРЅРёСЏС… СЃРµС‚РєРё Р·Р°РїРёС€РµРј РґР°РЅРЅС‹Рµ РІ РєСѓРєРёСЃС‹
+	 *  ** WARNING ** : СЌР»РµРјРµРЅС‚ СЃРµС‚РєРё РґРѕР»Р¶РµРЅ СЃРѕРґРµСЂР¶Р°С‚СЊ Р°С‚С‚СЂРёР±СѓС‚ id! 
 	 */
 	$('.grid-stack').on('change', function(event, items) {		
 		var $e = document.querySelectorAll('[data-gs-x]');
