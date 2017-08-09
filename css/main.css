@@ -894,6 +894,18 @@ header {
 #handle-block{
 	border: 1px solid #303435;
 }
-.plot .grid-stack-item{
-	top: 8px;
+.plot .grid-stack-item-content{
+	top: 8px !important;
+}
+.statistics .handle{
+	top: 12px;
+    right: 18px;
+}
+#orders-block .handle{
+	top: 12px;
+    right: 18px;
+}
+#handle-block .handle{
+	top: 12px;
+    right: 18px;
 }
