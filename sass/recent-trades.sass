@@ -1,0 +1,52 @@
+.recent-trades
+	width: 50%
+	p
+		padding: 0 0 6px
+		border-bottom: 1px solid #303435 
+		text-align: center
+	.table-container
+		margin: 0 5px 0 0
+		padding: 0 4px 0 0
+		border-right: 1px solid #303435 
+	table
+		width: 100% 
+	tr
+		border-bottom: 1px solid #1A1C1D
+		&:nth-child(2n)
+			background-color: #222526
+		&:hover
+			td
+				font-size: 14px
+	th,
+	td
+		padding-top: 2px
+		padding-bottom: 2px
+		text-align: left
+		line-height: 13px
+		&:first-child
+			width: 58px
+			color: #535353
+		&:nth-child(2)
+			width: 44px
+		&:nth-child(3)
+			width: 70px
+		&:last-child
+			width: 65px
+			span
+				color: #535353
+	th
+		padding-top: 10px
+		color: #535353
+	.buy
+		color: #09760c
+	.sell
+		color: #803333
+
+@media (max-width: 580px)
+	.recent-trades
+		width: 100%
+		margin-top: 30px 
+		table
+			max-width: 340px
+			margin-left: auto
+			margin-right: auto

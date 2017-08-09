@@ -1,0 +1,124 @@
+.trades-block
+	position: relative
+	div .mCSB_container
+		padding-right: 0 !important
+	#trades-block
+		padding: 10px
+		min-width: 550px
+		display: flex
+		
+.statistics .trades-block
+	height: 100% 
+	width: 100%
+	// max-height: 300px
+	
+.right-side-container
+	flex-shrink: 0
+	height: calc(100vh - 65px) 
+	min-height: 500px
+	margin-left: 10px
+	border: 1px solid #303435
+	> div .mCSB_container
+		padding-right: 0
+	
+	
+.right-side
+	min-width: 30px
+	min-height: 100%
+	width: auto
+	> div + div
+		border-top: 1px solid #303435
+
+	
+.statistics	.bottom-tabs
+	width: 100%
+
+.bottom-tabs
+	position: relative
+	padding: 10px
+	min-width: 550px
+	.tab-container
+		margin-top: 22px
+	.flex-container
+		display: flex
+		justify-content: space-between
+		max-width: 500px
+		> div
+			width: 235px
+	.flex
+		display: flex
+		justify-content: space-between
+		align-items: center
+		font-size: 14px
+		+ .flex
+			margin-top: 15px
+		input
+			width: 155px
+			height: 35px
+			padding: 0 10px
+			border: 1px solid #3a3a3a
+			background: #1F1F1F  
+		p
+			font-size: 14px
+		span
+			display: block
+			padding: 0 20px
+			font-size: 14px
+			line-height: 35px
+			cursor: pointer
+		[type="radio"]
+			display: none
+			&:checked + span
+				background: #323C4D 
+	.checks
+		justify-content: flex-start
+		p
+			width: 80px
+	.btns
+		display: flex
+		margin-top: 30px
+	.buy,
+	.sell
+		display: block
+		width: 63px
+		padding: 5px 0
+		color: #cccccc
+		font-size: 12px
+		font-weight: 400
+		line-height: 17px
+		text-align: center
+	.buy
+		margin-right: 18px
+		background: #46682D 
+	.sell
+		background: #803333
+		
+
+@media (max-width: 1200px)
+	.right-side-container
+		height: calc(100vh - 103px) 
+
+@media (max-width: 1100px)
+	.right-side-container
+		height: auto
+		min-height: 0
+		margin-left: 0
+		margin-top: 10px
+		
+
+@media (max-width: 580px)
+	.trades-block
+		#trades-block
+			display: block
+			min-width: 0
+	.bottom-tabs
+		ul
+			flex-direction: column
+			align-items: flex-start
+			li
+				margin: 0
+		.flex-container
+			display: block
+			> div
+				+ div
+					margin-top: 15px

@@ -1,0 +1,110 @@
+header
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding: 8px 10px 0
+	.home
+		flex-shrink: 0
+		display: block
+		width: 33px
+		height: 45px
+		background: url(../img/icons/home-icon.png) center center no-repeat
+	.main-tabs
+		display: flex
+		align-items: center
+		ul
+			display: flex
+		li
+			position: relative
+			width: 139px
+			height: 47px
+			border: 1px solid #272a2b
+			padding: 10px 5px 0 15px
+		.close
+			position: absolute
+			top: 7px
+			right: 6px
+			display: block
+			width: 17px
+			height: 17px
+			border: 1px solid #303435
+			background-color: #252728
+			color: #cccccc
+			font-size: 12px
+			line-height: 15px
+			text-align: center
+			cursor: pointer
+	.name
+		margin: 0
+		color: #cccccc
+		font-size: 12px
+		line-height: 1
+		font-weight: 700
+		text-transform: uppercase
+	.currency
+		margin: 8px 0 0
+		color: #929292
+		font-size: 11px
+		line-height: 1
+		span
+			margin-left: 8px
+	.minus
+		color: #983636
+	.plus
+		color: #46682d
+	.menu
+		display: flex
+		li
+			padding: 5px 10px
+			border-right: 1px solid #303435 
+			&:first-child a:before
+				content: ''
+				position: relative
+				top: 1px
+				display: inline-block
+				width: 11px
+				height: 11px
+				margin-right: 8px
+				background: url(../img/icons/home-icon.png)
+		a
+			color: #798588
+			font-size: 12px
+			font-weight: 400
+			text-transform: uppercase
+			
+@media (max-width: 1200px)
+	header
+		flex-direction: column
+		.main-tabs
+			order: 1
+			margin-top: 10px
+			margin-right: auto
+		.menu
+			li:last-child
+				border: none
+			
+@media (max-width: 800px)
+	header
+		.main-tabs
+			ul
+				flex-wrap: wrap
+				
+			
+@media (max-width: 580px)
+	header
+		.main-tabs
+			li
+				width: 130px
+				padding: 10px 5px 0 5px
+				
+@media (max-width: 450px)
+	header
+		.menu
+			li
+				padding: 5px 5px
+
+@media (max-width: 450px)
+	header
+		.menu
+			li:first-child a:before
+				display: none

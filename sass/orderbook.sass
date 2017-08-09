@@ -1,0 +1,58 @@
+.orderbook
+	width: 50%
+	+ .recent-trades
+		.table-container
+			margin: 0 0 0 5px
+			padding: 0 0 0 4px
+			border-left: 1px solid #303435 
+			border-right: none
+	p
+		padding: 0 0 6px
+		border-bottom: 1px solid #303435 
+		text-align: center
+	
+	table
+		width: 100% 
+	tr
+		border-bottom: 1px solid #1A1C1D
+		&:hover
+			td
+				font-size: 14px
+	th,
+	td
+		width: 33.33%
+		padding-top: 2px
+		padding-bottom: 2px
+		line-height: 13px
+		&:first-child
+			text-align: left
+		&:nth-child(2)
+			text-align: center
+		&:last-child
+			text-align: right
+	td:first-child
+		color: #e10606
+	th
+		padding-top: 10px
+		color: #535353
+	.divide 
+		height: 37px
+		background: url(../img/stat.jpg) center center no-repeat
+		~ tr td:first-child
+			color: #6bb329
+	.pagination	
+		border-right: 1px solid #303435 
+	
+
+@media (max-width: 580px)
+	.orderbook
+		width: 100% 
+		table
+			max-width: 340px
+			margin-left: auto
+			margin-right: auto
+		.table-container
+			padding: 0
+			border: none
+		.pagination	
+			border-right: none
