@@ -136,9 +136,6 @@
 								<li>
 									<a href="#balance">Balance</a>
 								</li>
-								<li>
-									<a href="#graph">graph</a>
-								</li>
 							</ul>
 							<div class="tab-container">
 								<div id="open-orders" class="open-orders tab-item">
@@ -435,83 +432,7 @@
 									</table>
 								</div>
 								<div id="balance" class="tab-item"></div>
-								<div id="graph" class="tab-item graph">
-									<img src="img/plot2.jpg" alt="plot2">
-									<div class="tables">
-										<table class="table1">
-											<thead>
-												<tr>
-													<th></th>
-													<th>Sold</th>
-													<th>Bought</th>
-													<th>%</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>1 min</td>
-													<td>1,545,455.55</td>
-													<td>2,745,455.55</td>
-													<td><span class="pos">34.5 </span></td>
-												</tr>
-												<tr>
-													<td>5 min</td>
-													<td>1,545,455.55</td>
-													<td>1,145,455.55</td>
-													<td><span class="neg">14.7 </span></td>
-												</tr>
-												<tr>
-													<td>10 min</td>
-													<td>1,545,455.55</td>
-													<td>2,745,455.55</td>
-													<td><span class="pos">34.5 </span></td>
-												</tr>
-												<tr>
-													<td>15 min</td>
-													<td>1,545,455.55</td>
-													<td>1,145,455.55</td>
-													<td><span class="neg">14.7 </span></td>
-												</tr>
-											</tbody>
-										</table>
-										<table class="table1">
-											<thead>
-												<tr>
-													<th></th>
-													<th>Sold</th>
-													<th>Bought</th>
-													<th>%</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>1 min</td>
-													<td>1,545,455.55</td>
-													<td>2,745,455.55</td>
-													<td><span class="pos">34.5 </span></td>
-												</tr>
-												<tr>
-													<td>5 min</td>
-													<td>1,545,455.55</td>
-													<td>1,145,455.55</td>
-													<td><span class="neg">14.7 </span></td>
-												</tr>
-												<tr>
-													<td>10 min</td>
-													<td>1,545,455.55</td>
-													<td>2,745,455.55</td>
-													<td><span class="pos">34.5 </span></td>
-												</tr>
-												<tr>
-													<td>15 min</td>
-													<td>1,545,455.55</td>
-													<td>1,145,455.55</td>
-													<td><span class="neg">14.7 </span></td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
+
 							</div>
 						</div>
 					
@@ -958,9 +879,91 @@
 					</div>
 					</div>
 
-
-
-
+					<div class="grid-stack-item"
+									data-gs-x="2" data-gs-y="20"
+									data-gs-width="2" data-gs-height="2"
+									id="graph-block"
+					>
+					<div class="grid-stack-item-content">
+					<div id="graph" class="tab-item graph">
+						<img src="img/plot2.jpg" alt="plot2">
+						<div class="tables">
+							<table class="table1">
+								<thead>
+									<tr>
+										<th></th>
+										<th>Sold</th>
+										<th>Bought</th>
+										<th>%</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1 min</td>
+										<td>1,545,455.55</td>
+										<td>2,745,455.55</td>
+										<td><span class="pos">34.5 </span></td>
+									</tr>
+									<tr>
+										<td>5 min</td>
+										<td>1,545,455.55</td>
+										<td>1,145,455.55</td>
+										<td><span class="neg">14.7 </span></td>
+									</tr>
+									<tr>
+										<td>10 min</td>
+										<td>1,545,455.55</td>
+										<td>2,745,455.55</td>
+										<td><span class="pos">34.5 </span></td>
+									</tr>
+									<tr>
+										<td>15 min</td>
+										<td>1,545,455.55</td>
+										<td>1,145,455.55</td>
+										<td><span class="neg">14.7 </span></td>
+									</tr>
+								</tbody>
+							</table>
+							<table class="table1">
+								<thead>
+									<tr>
+										<th></th>
+										<th>Sold</th>
+										<th>Bought</th>
+										<th>%</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1 min</td>
+										<td>1,545,455.55</td>
+										<td>2,745,455.55</td>
+										<td><span class="pos">34.5 </span></td>
+									</tr>
+									<tr>
+										<td>5 min</td>
+										<td>1,545,455.55</td>
+										<td>1,145,455.55</td>
+										<td><span class="neg">14.7 </span></td>
+									</tr>
+									<tr>
+										<td>10 min</td>
+										<td>1,545,455.55</td>
+										<td>2,745,455.55</td>
+										<td><span class="pos">34.5 </span></td>
+									</tr>
+									<tr>
+										<td>15 min</td>
+										<td>1,545,455.55</td>
+										<td>1,145,455.55</td>
+										<td><span class="neg">14.7 </span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					</div>
+					</div>
 
 	<!-- Вероятно, меню должно выезжать при каких-то условиях (но в коде нет и намёка на использование блока), используя CSS3 трансформации. Может быть вклинено в блок, если класс left-sidebar будет переписан, лишившись fixed'а и прочих свойств-->
 	<!--<div class="grid-stack-item"
