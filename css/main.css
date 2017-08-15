@@ -251,21 +251,7 @@ header {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex; }
-  .wrapper .left-side {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    width: calc(100% - 640px); }
+
 
 .custom-scroll {
   height: calc(100vh - 55px); }
@@ -276,11 +262,45 @@ header {
       margin: 0; }
     .custom-scroll > .mCustomScrollBox .mCSB_container_wrapper {
       margin: 0; }
+	  
+	  
+@media (max-width: 1600px) {
+  .custom-scroll {
+    height: calc(100vh - 55px);
+    min-height: calc(100vh - 55px); } }
+	
+@media (max-width: 1366px) {
+  .custom-scroll {
+    height: calc(100vh - 93px);
+    min-height: calc(140vh - 93px);
+	}
 
+	.volume-block tables table {
+		float:left;
+	}
+	
+
+	}
+
+@media (max-width: 1280px) {
+  .custom-scroll {
+    height: calc(150vh - 93px);
+    min-height: calc(150vh - 93px); } }
+	
 @media (max-width: 1200px) {
   .custom-scroll {
     height: calc(100vh - 93px);
     min-height: calc(100vh - 93px); } }
+	
+@media (max-width: 1024px) {
+  .custom-scroll {
+    height: calc(220vh - 93px);
+    min-height: calc(220vh - 93px); } }
+	
+@media (max-width: 800px) {
+  .custom-scroll {
+    height: calc(320vh - 93px);
+    min-height: calc(320vh - 93px); } }
 
 @media (max-width: 1140px) {
   .wrapper {
@@ -454,7 +474,7 @@ header {
   position: relative;
   height: 100%;
   width: 100%;
-  min-width: 550px; }
+  min-width: 320px; }
   .graph .mCSB_container {
     padding: 10px; }
   .graph img {
@@ -503,7 +523,7 @@ header {
 
 .tabs-block {
   position: relative;
-  min-width: 550px;
+  min-width: 320px;
   height: 100%;
   min-height: 300px;
   width: 100%; }
@@ -612,22 +632,7 @@ header {
     .left-sidebar .signals .sell {
       color: #c33131; }
 
-.trades-block {
-  position: relative; }
-  .trades-block div .mCSB_container {
-    padding-right: 0 !important; }
-  .trades-block #trades-block {
-    padding: 10px;
-    min-width: 550px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex; }
-
-.statistics .trades-block {
-  height: 100%;
-  width: 100%; }
-
+ 
 .right-side-container {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
@@ -763,12 +768,9 @@ header {
       margin-top: 15px; } }
 
 .orderbook {
-  width: 50%; }
-  .orderbook + .recent-trades .table-container {
-    margin: 0 0 0 5px;
-    padding: 0 0 0 4px;
-    border-left: 1px solid #303435;
-    border-right: none; }
+	padding:5px;
+ }
+ 
   .orderbook p {
     padding: 0 0 6px;
     border-bottom: 1px solid #303435;
@@ -821,7 +823,8 @@ header {
       border-right: none; } }
 
 .recent-trades {
-  width: 50%; }
+	padding:5px;
+ }
   .recent-trades p {
     padding: 0 0 6px;
     border-bottom: 1px solid #303435;
@@ -829,7 +832,7 @@ header {
   .recent-trades .table-container {
     margin: 0 5px 0 0;
     padding: 0 4px 0 0;
-    border-right: 1px solid #303435; }
+  }
   .recent-trades table {
     width: 100%; }
   .recent-trades tr {

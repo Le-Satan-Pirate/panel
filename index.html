@@ -5,28 +5,56 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Panel</title>
-	<link rel="stylesheet" href="css/gridstack.min.css" />
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/jquery.formstyler.css">
-	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-	<!-- <link rel="stylesheet" href="css/dragula.min.css"> -->
 	<link rel="stylesheet" href="css/bootstrap-select.min.css">
-	
-	<!-- Latest compiled and minified CSS 
-	-->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/main.css"/>
-	
-
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="js/jquery.formstyler.min.js"></script>
-	<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-	<script src="js/jquery-ui.min.js"></script>	
-		
-	<script src="js/lodash.min.js"></script>
-	
-	<script src="js/gridstack.all.js"></script>	
-	
+
+	<!--<script src="js/gridstack.all.js"></script>	-->
+		<style>
+			.gd-dragging{
+				opacity:0.8;
+			}
+			.gd-resizing{
+				opacity:0.8;
+			}
+			.gd-trigger{
+				top:8px !important;
+				right:8px !important;
+				width: 20px !important;
+				height: 5px !important;
+				background: url(img/icons/drag-icon.png);
+				border: none !important;
+				cursor: move;
+			}
+			.gd-trigger:hover{
+				opacity:0.6;
+			}
+			.gd-resizer{
+				width: 16px !important;
+				height: 16px !important;
+				background: url(img/icons/resizer-icon.png);
+				border: none !important;
+				cursor: nw-resize;
+				opacity:0.4;
+			}					
+			.gd-resizer:hover{
+				opacity:1;				
+			}
+			.gd-content{
+				padding-left:8px;
+				padding-top:8px;
+				padding-right: 48px !important;
+			}
+			  .gd-placeholder{
+  			 
+   			 border:1px dashed red !important;
+   }
+      .gd-target{
+    border: 1px solid green !important;
+ 
+   }
+
+		</style>	
 </head>
 <body>
 	<header>
@@ -81,16 +109,17 @@
 		</nav>
 	</header>
 	<div class="custom-scroll">
-		<div class="wrapper grid-stack">
+		<div class="wrapper" id="main-container" gd-grid="true" gd-width="32" gd-height="32"
+			gd-padding-x="4" gd-padding-y="4" gd-no-intersects="true">
 
-				<!-- График -->
-				<div class="plot grid-stack-item"
-					data-gs-x="0" data-gs-y="0"
-					data-gs-width="7" data-gs-height="6"
+	 
+				<div class="plot"
+					gd-item="true" gd-item-x="0" gd-item-y="0"
+					gd-item-width="22" gd-item-height="20" gd-trigger="true"
 					id="graph-block"
 				>
 					<div class="grid-stack-item-content">
-						<div class="handle mega-handle"></div>
+					 
 						<div class="top">
 							<select name="" class="select1">
 								<option value="1" data-content="<img src='img/kraken-logo.png'> 1"></option>
@@ -109,17 +138,17 @@
 						<img src="img/plot.jpg" alt="plot">
 					</div>
 				</div>
-				<div class="statistics-container grid-stack-item"
-					data-gs-x="0" data-gs-y="6"
-					data-gs-width="7" data-gs-height="9"
+				<div class="statistics-container statistics"
+					gd-item="true" gd-item-x="11" gd-item-y="20"
+					gd-item-width="11" gd-item-height="12" gd-trigger="true"
 					id="stats-block"
 				>
-					<div class="grid-stack-item-content statistics" id="statistics">
+					
 					
 					
 						
 						<div class="tabs-block">
-							<div class="handle"></div>
+						 
 							<ul class="tab-list">
 								<li>
 									<a href="#open-orders">Open orders</a>
@@ -436,18 +465,18 @@
 							</div>
 						</div>
 					
-					</div>
+					
 				</div>
 				
 
-				<div class="grid-stack-item"
-					data-gs-x="7" data-gs-y="3"
-					data-gs-width="5" data-gs-height="11"
+				<div
+					gd-item="true" gd-item-x="22" gd-item-y="0"
+					gd-item-width="5" gd-item-height="20" gd-trigger="true"
 					id="orders-block"
 				>
-				<div class="grid-stack-item-content">
+			
 					<div class="trades-block" >
-						<div class="handle"></div>
+						<!-- <div class="handle"></div> -->
 						<div id="trades-block">
 							<div class="orderbook">
 								<p class="drag">Orderbook</p>
@@ -584,36 +613,8 @@
 												<td>1,500,542</td>
 												<td>3,000,542</td>
 											</tr>
-											<tr>
-												<td>0.033545 €</td>
-												<td>1,500,542</td>
-												<td>1,500,542</td>
-											</tr>
-											<tr>
-												<td>0.033545 €</td>
-												<td>1,500,542</td>
-												<td>3,000,542</td>
-											</tr>
-											<tr>
-												<td>0.033545 €</td>
-												<td>1,500,542</td>
-												<td>3,000,542</td>
-											</tr>
-											<tr>
-												<td>0.033545 €</td>
-												<td>1,500,542</td>
-												<td>1,500,542</td>
-											</tr>
-											<tr>
-												<td>0.033545 €</td>
-												<td>1,500,542</td>
-												<td>3,000,542</td>
-											</tr>
-											<tr>
-												<td>0.033545 €</td>
-												<td>1,500,542</td>
-												<td>3,000,542</td>
-											</tr>
+										 
+										 
 										</tbody>
 									</table>
 								</div>
@@ -623,6 +624,17 @@
 									<a href="#" class="next">&gt;</a>
 								</div>
 							</div>
+                            </div>
+                            </div>
+							</div>
+						
+							
+                            	<div class="statistics-container"
+					gd-item="true" gd-item-x="27" gd-item-y="0"
+					gd-item-width="5" gd-item-height="20" gd-trigger="true"
+					id="orders-blocek"
+				>
+                            
 							<div class="recent-trades">
 								<p class="drag">Recent trades</p>
 								<div class="table-container">
@@ -803,22 +815,21 @@
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>	
-				</div>
+					
+				
 					
 					
 
 
-					<div class="grid-stack-item"
-						data-gs-x="7" data-gs-y="11"
-						data-gs-width="5" data-gs-height="5"
+					<div
+						gd-item="true" gd-item-x="22" gd-item-y="20"
+						gd-item-width="10" gd-item-height="12" gd-trigger="true"
 						id="handle-block"
 					>
 					<div class="grid-stack-item-content right-side">
 					
 						<div class="bottom-tabs">
-							<div class="handle"></div>
+							<!-- <div class="handle"></div> -->
 							<ul class="tab-list">
 								<li>
 									<a href="#place-order">Place Order</a>
@@ -879,14 +890,24 @@
 					</div>
 					</div>
 
-					<div class="grid-stack-item"
-									data-gs-x="0" data-gs-y="20"
-									data-gs-width="7" data-gs-height="4"
-									id="graph-block-2"
+					<div class="statistics-container"
+						gd-item="true" gd-item-x="0" gd-item-y="20" 
+						gd-item-width="11" gd-item-height="6" gd-trigger="true"
+						id="graph-block-second"
 					>
-					<div class="grid-stack-item-content">
+					
 					<div id="graph" class="tab-item graph">
 						<img src="img/plot2.jpg" alt="plot2">
+						
+						</div>
+						
+						</div>
+							<div class="statistics-container graph"
+						gd-item="true" gd-item-x="0" gd-item-y="26" 
+						gd-item-width="11" gd-item-height="6" gd-trigger="true"
+						id="volume-block"
+					>
+						
 						<div class="tables">
 							<table class="table1">
 								<thead>
@@ -962,8 +983,8 @@
 							</table>
 						</div>
 					</div>
-					</div>
-					</div>
+					 
+					
 
 	<!-- Вероятно, меню должно выезжать при каких-то условиях (но в коде нет и намёка на использование блока), используя CSS3 трансформации. Может быть вклинено в блок, если класс left-sidebar будет переписан, лишившись fixed'а и прочих свойств-->
 	<!--<div class="grid-stack-item"
@@ -1256,9 +1277,7 @@
 		</div>
 	</div>
 
-
-	<!--</div>				
-	</div>-->	
+ 
 	
 	
 	</div>
@@ -1266,16 +1285,10 @@
 	</div>
 	
 
-
-
 	
-	<!--
-	<script src="js/dragula.min.js"></script>
-	-->
 	
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<script src="js/bootstrap-select.min.js"></script>
-	
+	<script src="js/griddom.js"></script>
 	<script src="js/main.js"></script>
 </body>
 </html>
