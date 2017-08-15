@@ -328,7 +328,8 @@ header {
     -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
-    align-items: center; }
+    align-items: center;
+	padding-bottom:5px;}
   .plot .select1,
   .plot .select2 {
     width: auto !important; }
@@ -390,7 +391,7 @@ header {
     background: #272a2b url(../img/icons/arrow-down.png) center center no-repeat;
     cursor: pointer; }
   .plot a {
-    margin-bottom: 10px;
+   
     color: #cccccc;
     font-size: 12px;
     font-weight: 400;
