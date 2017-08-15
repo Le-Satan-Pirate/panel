@@ -54,6 +54,51 @@
  
    }
 
+.dd-option-text{
+	line-height: 0px !important;
+}
+.dd-selected-text{
+	line-height: 0px !important;
+}
+.dd-select{
+	height: 32px !important;
+	/* width: 160px; */
+} 
+.dd-container{
+	margin-right:4px;
+}
+.dd-option{
+	margin: 0 !important;
+}  
+.dd-option-image {
+	width: auto !important;
+	height: auto !important;
+	paddint-top: 4px;
+}  
+.dd-selected-image {
+	width: auto !important;
+	height: auto !important;
+}  
+.dd-select {
+    border-radius: 2px;
+    border: solid 1px #303435 !important;
+	background: rgba(0,0,0,0) !important;
+}
+.dd-options{
+	background: rgba(0,0,0,0) !important;
+	border: solid 1px rgba(255,255,255,0.2) !important;
+	box-shadow: 0px 1px 5px rgba(255,255,255,0.2) !important;
+}
+.dd-options .dd-option{
+	border-color: rgba(255,255,255,0.2) !important;
+}
+.dd-option:hover{
+	background: rgba(255,255,255,0.2) !important;
+}
+.dd-option-selected{
+	background: rgba(0,0,0,0) !important;
+}
+
 		</style>	
 </head>
 <body>
@@ -122,13 +167,13 @@
 					 
 						<div class="top">
 							<select name="" class="select1">
-								<option value="1" data-content="<img src='img/kraken-logo.png'> 1"></option>
+								<option value="1" data-imagesrc="img/kraken-logo.png">1</option>
 
-								<option value="2" data-content="<img src='img/kraken-logo.png'> 2"></option>
+								<option value="2" data-imagesrc="img/kraken-logo.png">2</option>
 							</select>
 							<select name="" class="select2">
-								<option value="1" data-content="<img src='img/stellar-rocket-300.png'> 1"></option>
-								<option value="2" data-content="<img src='img/stellar-rocket-300.png'> 2"></option>
+								<option value="1" data-imagesrc="img/stellar-rocket-300.png">1</option>
+								<option value="2" data-imagesrc="img/stellar-rocket-300.png">2</option>
 							</select>
 							<a href="javascript:void(0);">Save tab <span class="star"></span></a>
 							<a href="#" class="buy">Buy</a>
@@ -1285,10 +1330,20 @@
 	</div>
 	
 
+	<script src="js/jquery.ddslick.min.js"></script>
 	
-	
-	<script src="js/bootstrap-select.min.js"></script>
+	<!--<script src="js/bootstrap-select.min.js"></script>-->
 	<script src="js/griddom.js"></script>
 	<script src="js/main.js"></script>
+	<script>
+		/*
+			ddslick менюшки. Стиль в хэдере. Сам вызов желательно вынести куда-то в другое место. Плагин требует jQuery, но, в отличии от bootstrap-select'а не ломается в блоках с absolute position .__.
+		*/
+		var ddslickOptions = {
+			width: '160px' // Ширина селектора. Для margin-отступов меняем margin у .dd-container
+		};
+		$('.select1').ddslick(ddslickOptions);
+		$('.select2').ddslick(ddslickOptions);
+	</script>
 </body>
 </html>
