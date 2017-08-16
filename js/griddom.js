@@ -823,8 +823,9 @@ var GridDOMGrid = function(elemId, params){
 				d.height = self.childs[i].height;
 				data.push(d);
 			}
-			var json = JSON.stringify(data);
+			var json = JSON.stringify(data);			
 			setCookie('gd-grid-save', json, 1000);
+			if(self.resetButton){ self.resetButton.style.display = 'initial'; }
 			return json;
 		},
 		load: function(presetData){
@@ -856,8 +857,8 @@ var GridDOMGrid = function(elemId, params){
 	 */
 	this.clientRes = _Client.Screen.getResolution();
 	this.clientPreset = this.stateManager.load();
-	if(!this.clientPreset){	// У клиента НЕТ своего пресета (он ничего не менял)	
-		(function(num){
+	
+	this.loadDefaultPreset = function(num){
 			var curr = 1920;
 			var diff = Math.abs (num - curr);
 			
@@ -871,8 +872,25 @@ var GridDOMGrid = function(elemId, params){
 			console.log('Changed to standart preset:', curr);
 			self.stateManager.load(self.stateManager.presets[curr]);
 			
-		})(this.clientRes.w);
+	};
+	
+	if(!this.clientPreset){	// У клиента НЕТ своего пресета (он ничего не менял)	
+		this.loadDefaultPreset(this.clientRes.w);
 	}
+	
+	this.resetButton = null;
+	var resets = document.querySelectorAll('[gd-reset-button]');
+	if(resets.length){
+		this.resetButton = resets[0];
+		if(!this.clientPreset) { this.resetButton.style.display = 'none'; } 
+						  else { this.resetButton.style.display = 'initial'; }
+		this.resetButton.onclick = function(){
+			setCookie('gd-grid-save', '', 0);
+			self.loadDefaultPreset(self.clientRes.w);
+			self.resetButton.style.display = 'none';
+		};
+	}
+	
 	
 	this.onResize();
 };
