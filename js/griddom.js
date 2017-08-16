@@ -839,13 +839,15 @@ var GridDOMGrid = function(elemId, params){
 						el.cell.x = data[i].x;
 						el.cell.y = data[i].y;
 						el.cell.width = data[i].width;
-						el.cell.height = data[i].height;
+						el.cell.height = data[i].height;						
+						el.cell.setOnCell(~~data[i].x, data[i].y);
 					}
 					el.setAttribute('gd-item-x', data[i].x);
 					el.setAttribute('gd-item-y', data[i].y);
 					el.setAttribute('gd-item-width', data[i].width);
 					el.setAttribute('gd-item-height', data[i].height);
 				}
+				self.onResize();
 				return data;
 			}
 			return false;
