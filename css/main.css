@@ -10,6 +10,11 @@ body {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%; }
 
+.green {color:#59b32a;}
+.green-bg {background-color:#3f6f26;}
+.red {color:#ea3623;}
+.red-bg {background-color:#94281d;}
+
 ul {
   margin: 0;
   padding: 0;
@@ -58,6 +63,7 @@ input:focus {
     height: 23px;
     margin: 0 5px;
     border: 1px solid #303435;
+	background-color:#222425;
     color: #cccccc;
     font-size: 12px;
     font-weight: 400;
@@ -183,10 +189,7 @@ header {
     line-height: 1; }
     header .currency span {
       margin-left: 8px; }
-  header .minus {
-    color: #983636; }
-  header .plus {
-    color: #46682d; }
+ 
   header .menu {
     display: -webkit-box;
     display: -webkit-flex;
@@ -411,10 +414,6 @@ header {
     margin-left: 17px;
     padding: 5px 0;
     text-align: center; }
-  .plot .buy {
-    background: #46682D; }
-  .plot .sell {
-    background: #803333; }
   .plot .bell {
     display: block;
     width: 25px;
@@ -511,10 +510,6 @@ header {
     .graph .tables td:nth-child(3) {
       width: 90px;
       padding-left: 10px; }
-    .graph .tables .pos {
-      color: #008e02; }
-    .graph .tables .neg {
-      color: #c32b2b; }
 
 .right-side .graph {
   width: 530px; }
@@ -731,10 +726,8 @@ header {
     line-height: 17px;
     text-align: center; }
   .bottom-tabs .buy {
-    margin-right: 18px;
-    background: #46682D; }
-  .bottom-tabs .sell {
-    background: #803333; }
+    margin-right: 18px; }
+
 
 @media (max-width: 1200px) {
   .right-side-container {
@@ -797,16 +790,14 @@ header {
     .orderbook th:last-child,
     .orderbook td:last-child {
       text-align: right; }
-  .orderbook td:first-child {
-    color: #e10606; }
+
   .orderbook th {
     padding-top: 10px;
     color: #535353; }
   .orderbook .divide {
     height: 37px;
     background: url(../img/stat.jpg) center center no-repeat; }
-    .orderbook .divide ~ tr td:first-child {
-      color: #6bb329; }
+
   .orderbook .pagination {
     border-right: 1px solid #303435; }
 
@@ -867,10 +858,7 @@ header {
   .recent-trades th {
     padding-top: 10px;
     color: #535353; }
-  .recent-trades .buy {
-    color: #09760c; }
-  .recent-trades .sell {
-    color: #803333; }
+ 
 
 @media (max-width: 580px) {
   .recent-trades {
@@ -913,3 +901,12 @@ header {
 	top: 12px;
     right: 18px;
 }
+
+.preview-table{width:100%;border-collapse:collapse}
+.preview-table th{font-weight:400;border:1px solid #3f3f3f}
+.preview-table th:first-child{border-left-width:0}
+.preview-table th:last-child{border-right-width:0}
+.preview-table td, .preview-table th{padding:1px 0;padding-right:5px;padding-left:10px}
+.preview-table td{font-size:12px;width:50%;text-align:left;}
+.preview-table td:first-child{border-right:1px solid #3f3f3f}
+.list-table{width:100%;font-size:12px}

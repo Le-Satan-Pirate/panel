@@ -347,6 +347,7 @@ var Draggable = function(elemId, params){
 		}); 
 		onEvent(document, 'mouseup', function(e){ 
 			self.grid.el.style.userSelect = self.grid.el.style.MozUserSelect = self.grid.el.style.msUserSelect = "";
+
 		
 			var lastResizeMode = self.resizeMode;
 			self.resizeMode = false;
@@ -363,7 +364,12 @@ var Draggable = function(elemId, params){
 			if(!self.isDragReady){return 0;}
 			self.isDragReady = false; 
 
-			self.onDragEnd?self.onDragEnd(e):0;
+			var dontSave = false;
+			if(!lastResizeMode && self.triggerMode && !e.target.isTrigger){ 
+				dontSave = true;
+			}
+
+			self.onDragEnd?self.onDragEnd(e, dontSave):0;
 		}); 
 		onEvent(document, 'mousemove', function(e){  
 			if(self.isDragReady && !e.target.nondraggable){  
@@ -518,11 +524,17 @@ var GridDraggable = function(elemId, grid, params){
 		
 		var cellX = e ? ((left-self.grid.paddingX-self.grid.el.offsetLeft)/w + 0.5 | 0) : x;
 		var cellY = e ? ((top-self.grid.paddingY-self.grid.el.offsetTop)/h + 0.5 | 0) : y;
-		
+						
+		/*
 		(cellX<0)?(cellX=0):0;
 		((cellX+self.width)>self.grid.width)?(cellX=self.grid.width-self.width):0;
 		(cellY<0)?(cellY=0):0;
 		((cellY+self.height)>self.grid.height)?(cellY=self.grid.height-self.height):0;
+		*/
+		(cellX<0)?(cellX=self.startCell.x):0;
+		((cellX+self.width)>self.grid.width)?(cellX=self.startCell.x,self.width=self.startCell.width):0;
+		(cellY<0)?(cellY=self.startCell.y):0;
+		((cellY+self.height)>self.grid.height)?(cellY=self.startCell,self.height=self.startCell.height):0;
 		
 		var elX = cellX * w;
 		var elY = cellY * h;
@@ -612,7 +624,7 @@ var GridDraggable = function(elemId, grid, params){
 		self.drawPlaceholder(e);
 		self.drawCollisions();		
 	};	
-	this.onDragEnd_grid = function(e){
+	this.onDragEnd_grid = function(e, dontSave){
 		self.setOnCell(null, null, e);	
 		for(var i=0;i<self.grid.childs.length;i++){
 			self.grid.childs[i].el.classList.remove('gd-target');
@@ -668,7 +680,7 @@ var GridDraggable = function(elemId, grid, params){
 			}
 			
 		}
-		self.grid.stateManager.save();
+		(!dontSave)?self.grid.stateManager.save():0;
 	};		
 	
 	this.onResizeMove_grid = function(e){
@@ -805,6 +817,7 @@ var GridDOMGrid = function(elemId, params){
 	this.stateManager = {
 		presets: {
 			'1920':'[{"id":"graph-block","x":0,"y":0,"width":22,"height":20},{"id":"stats-block","x":11,"y":20,"width":11,"height":12},{"id":"orders-block","x":22,"y":0,"width":5,"height":20},{"id":"orders-blocek","x":27,"y":0,"width":5,"height":20},{"id":"handle-block","x":22,"y":20,"width":10,"height":12},{"id":"graph-block-second","x":0,"y":20,"width":11,"height":6},{"id":"volume-block","x":0,"y":26,"width":11,"height":6}]',
+			'1680':'[{"id":"graph-block","x":0,"y":0,"width":22,"height":15},{"id":"stats-block","x":11,"y":15,"width":11,"height":17},{"id":"orders-block","x":22,"y":0,"width":5,"height":21},{"id":"orders-blocek","x":27,"y":0,"width":5,"height":21},{"id":"handle-block","x":0,"y":15,"width":11,"height":10},{"id":"graph-block-second","x":22,"y":21,"width":10,"height":11},{"id":"volume-block","x":0,"y":25,"width":11,"height":7}]',
 			'1600':'[{"id":"graph-block","x":0,"y":0,"width":22,"height":15},{"id":"stats-block","x":11,"y":15,"width":11,"height":17},{"id":"orders-block","x":22,"y":0,"width":5,"height":25},{"id":"orders-blocek","x":27,"y":0,"width":5,"height":25},{"id":"handle-block","x":0,"y":15,"width":11,"height":10},{"id":"graph-block-second","x":22,"y":25,"width":10,"height":7},{"id":"volume-block","x":0,"y":25,"width":11,"height":7}]',
 			'1440x900':'[{"id":"graph-block","x":0,"y":0,"width":22,"height":15},{"id":"stats-block","x":11,"y":15,"width":11,"height":17},{"id":"orders-block","x":22,"y":0,"width":5,"height":25},{"id":"orders-blocek","x":27,"y":0,"width":5,"height":25},{"id":"handle-block","x":0,"y":15,"width":11,"height":10},{"id":"graph-block-second","x":22,"y":25,"width":10,"height":7},{"id":"volume-block","x":0,"y":25,"width":11,"height":7}]',
 			'1366x768':'[{"id":"graph-block","x":0,"y":0,"width":20,"height":13},{"id":"stats-block","x":0,"y":23,"width":20,"height":9},{"id":"orders-block","x":20,"y":0,"width":6,"height":23},{"id":"orders-blocek","x":26,"y":0,"width":6,"height":23},{"id":"handle-block","x":0,"y":13,"width":13,"height":10},{"id":"graph-block-second","x":20,"y":23,"width":12,"height":9},{"id":"volume-block","x":13,"y":13,"width":7,"height":10}]',
@@ -825,7 +838,7 @@ var GridDOMGrid = function(elemId, params){
 			}
 			var json = JSON.stringify(data);			
 			setCookie('gd-grid-save', json, 1000);
-			if(self.resetButton){ self.resetButton.style.display = 'initial'; }
+			if(self.resetButton){ self.resetButton.style.display = ''; }
 			return json;
 		},
 		load: function(presetData){
@@ -885,7 +898,7 @@ var GridDOMGrid = function(elemId, params){
 	if(resets.length){
 		this.resetButton = resets[0];
 		if(!this.clientPreset) { this.resetButton.style.display = 'none'; } 
-						  else { this.resetButton.style.display = 'initial'; }
+						  else { this.resetButton.style.display = ''; }
 		this.resetButton.onclick = function(){
 			setCookie('gd-grid-save', '', 0);
 			self.loadDefaultPreset(self.clientRes.w);

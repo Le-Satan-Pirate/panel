@@ -99,6 +99,19 @@
 	background: rgba(0,0,0,0) !important;
 }
 
+.dd-pointer-down {
+    border: solid 5px transparent;
+    border-top: solid 5px #303435 !important;
+}
+.dd-pointer-up {
+    border: solid 5px transparent !important;
+    border-bottom: solid 5px #303435 !important;
+    margin-top: -8px;
+}
+span.dd-pointer  {    border: solid 5px transparent;
+    border-top: solid 5px #303435 !important;}
+
+
 		</style>	
 </head>
 <body>
@@ -109,27 +122,27 @@
 				<li class="open-panel">
 					<span class="close">x</span>
 					<p class="name">KRAKEN</p>
-					<p class="currency">XML / EUR<span class="minus">-8,46%</span></p>
+					<p class="currency">XML / EUR<span class="red">-8,46%</span></p>
 				</li>
 				<li>
 					<span class="close">x</span>
 					<p class="name">EXMO</p>
-					<p class="currency">BTC / EUR<span class="plus">+8,46%</span></p>
+					<p class="currency">BTC / EUR<span class="green">+8,46%</span></p>
 				</li>
 				<li>
 					<span class="close">x</span>
 					<p class="name">POLONIEX</p>
-					<p class="currency">BTC / EUR<span class="plus">+8,46%</span></p>
+					<p class="currency">BTC / EUR<span class="green">+8,46%</span></p>
 				</li>
 				<li>
 					<span class="close">x</span>
 					<p class="name">BIFINEX</p>
-					<p class="currency">BTC / EUR<span class="minus">+8,46%</span></p>
+					<p class="currency">BTC / EUR<span class="red">+8,46%</span></p>
 				</li>
 				<li>
 					<span class="close">x</span>
 					<p class="name">BITSGAP</p>
-					<p class="currency">BTC / EUR<span class="plus">+8,46%</span></p>
+					<p class="currency">BTC / EUR<span class="green">+8,46%</span></p>
 				</li>
 			</ul>
 		</div>
@@ -179,8 +192,8 @@
 								<option value="2" data-imagesrc="img/stellar-rocket-300.png">BTC Bitcoin</option>
 							</select>
 							<a href="javascript:void(0);">Save tab <span class="star"></span></a>
-							<a href="#" class="buy">Buy</a>
-							<a href="#" class="sell">Sell</a>
+							<a href="#" class="buy green-bg">Buy</a>
+							<a href="#" class="sell red-bg">Sell</a>
 							<a href="#" class="bell"></a>
 						</div>
 						<img src="img/plot.jpg" alt="plot">
@@ -230,7 +243,7 @@
 										<tbody>
 											<tr>
 												<td>Kraken</td>
-												<td><span class="buy">Buy</span></td>
+												<td><span class="green">Buy</span></td>
 												<td>1,500,000.250</td>
 												<td>0.01176600</td>
 												<td>
@@ -246,7 +259,7 @@
 											</tr>
 											<tr>
 												<td>Kraken</td>
-												<td><span class="sell">Sell</span></td>
+												<td><span class="red">Sell</span></td>
 												<td>1,500,000.250</td>
 												<td>0.01176600</td>
 												<td>
@@ -262,7 +275,7 @@
 											</tr>
 											<tr>
 												<td>Kraken</td>
-												<td><span class="buy">Buy</span></td>
+												<td><span class="green">Buy</span></td>
 												<td>1,500,000.250</td>
 												<td>0.01176600</td>
 												<td>
@@ -278,7 +291,7 @@
 											</tr>
 											<tr>
 												<td>Kraken</td>
-												<td><span class="sell">Sell</span></td>
+												<td><span class="red">Sell</span></td>
 												<td>1,500,000.250</td>
 												<td>0.01176600</td>
 												<td>
@@ -294,7 +307,7 @@
 											</tr>
 											<tr>
 												<td>Btc-e.com</td>
-												<td><span class="buy">Buy</span></td>
+												<td><span class="green">Buy</span></td>
 												<td>1,500,000.250</td>
 												<td>0.01176600</td>
 												<td>
@@ -310,7 +323,7 @@
 											</tr>
 											<tr>
 												<td>Btc-e.com</td>
-												<td><span class="sell">Sell</span></td>
+												<td><span class="red">Sell</span></td>
 												<td>1,500,000.250</td>
 												<td>0.01176600</td>
 												<td>
@@ -326,7 +339,7 @@
 											</tr>
 											<tr>
 												<td>Btc-e.com</td>
-												<td><span class="buy">Buy</span></td>
+												<td><span class="green">Buy</span></td>
 												<td>1,500,000.250</td>
 												<td>0.01176600</td>
 												<td>
@@ -342,7 +355,7 @@
 											</tr>
 											<tr>
 												<td>Btc-e.com</td>
-												<td><span class="sell">Sell</span></td>
+												<td><span class="red">Sell</span></td>
 												<td>1,500,000.250</td>
 												<td>0.01176600</td>
 												<td>
@@ -424,7 +437,7 @@
 										<tbody>
 											<tr>
 												<td>Kraken</td>
-												<td><span class="sell">Sell</span></td>
+												<td><span class="red">Sell</span></td>
 												<td>XLM / EUR</td>
 												<td>1,500</td>
 												<td>0.01176</td>
@@ -432,7 +445,7 @@
 											</tr>
 											<tr>
 												<td>Kraken</td>
-												<td><span class="sell">Sell</span></td>
+												<td><span class="red">Sell</span></td>
 												<td>XLM / EUR</td>
 												<td>1,500</td>
 												<td>0.01176</td>
@@ -440,7 +453,7 @@
 											</tr>
 											<tr>
 												<td>Kraken</td>
-												<td><span class="buy">Buy</span></td>
+												<td><span class="green">Buy</span></td>
 												<td>XLM / EUR</td>
 												<td>1,500</td>
 												<td>0.01176</td>
@@ -448,7 +461,7 @@
 											</tr>
 											<tr>
 												<td>Kraken</td>
-												<td><span class="sell">Sell</span></td>
+												<td><span class="red">Sell</span></td>
 												<td>XLM / EUR</td>
 												<td>1,500</td>
 												<td>0.01176</td>
@@ -456,7 +469,7 @@
 											</tr>
 											<tr>
 												<td>Kraken</td>
-												<td><span class="sell">Sell</span></td>
+												<td><span class="red">Sell</span></td>
 												<td>XLM / EUR</td>
 												<td>1,500</td>
 												<td>0.01176</td>
@@ -508,8 +521,52 @@
 										</tbody>
 									</table>
 								</div>
-								<div id="balance" class="tab-item"></div>
-
+								<div id="balance" class="tab-item">
+								<table class="table2">
+										<thead>
+											<tr>
+												<th>Market</th>
+												<th>Currency</th>
+												<th>Total</th>
+												<th>Value (usd / eur)</th>
+											 
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Kraken</td>
+												<td>XLM </td>
+												<td>1,500565.52</td>
+												<td>150 €</td>
+												
+											</tr>
+											<tr>
+												<td>Kraken</td>
+												<td>XLM </td>
+												<td>1,500565.52</td>
+												<td>150 €</td>
+											</tr>
+											<tr>
+											<td>Kraken</td>
+												<td>XLM </td>
+												<td>1,500565.52</td>
+												<td>150 €</td>
+											</tr>
+											<tr>
+												<td>Poloniex</td>
+												<td>BTC</td>
+												<td>1.554555</td>
+												<td>4250 €</td>
+											</tr>
+											<tr>
+												<td> </td>
+												<td> </td>
+												<td style="text-align:right;"><b class="green">Total:</b></td>
+												<td><b class="green">45,425.50 €</b></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
 							</div>
 						</div>
 					
@@ -535,66 +592,66 @@
 												<th>Price</th>
 												<th>Volume</th>
 												<th>Total vol.</th>
-											</tr>
+											</tr> 
 										</thead>
 										<tbody>
 											<tr>
-												<td>0.033545 €</td>
+												<td class="red">0.033545 €</td>
 												<td>1,500,542</td>
 												<td>1,500,542</td>
 											</tr>
 											<tr>
-												<td>0.033545 €</td>
+												<td class="red">0.033545 €</td>
 												<td>1,500,542</td>
 												<td>3,000,542</td>
 											</tr>
 											<tr>
-												<td>0.033545 €</td>
+												<td class="red">0.033545 €</td>
 												<td>1,500,542</td>
 												<td>3,000,542</td>
 											</tr>
 											<tr>
-												<td>0.033545 €</td>
+												<td class="red">0.033545 €</td>
 												<td>1,500,542</td>
 												<td>1,500,542</td>
 											</tr>
 											<tr>
-												<td>0.033545 €</td>
+												<td class="red">0.033545 €</td>
 												<td>1,500,542</td>
 												<td>3,000,542</td>
 											</tr>
 											<tr>
-												<td>0.033545 €</td>
+												<td class="red">0.033545 €</td>
 												<td>1,500,542</td>
 												<td>3,000,542</td>
 											</tr>
 											<tr>
-												<td>0.033545 €</td>
+												<td class="red">0.033545 €</td>
 												<td>1,500,542</td>
 												<td>1,500,542</td>
 											</tr>
 											<tr>
-												<td>0.033545 €</td>
+												<td class="red">0.033545 €</td>
 												<td>1,500,542</td>
 												<td>3,000,542</td>
 											</tr>
 											<tr>
-												<td>0.033545 €</td>
+												<td class="red">0.033545 €</td>
 												<td>1,500,542</td>
 												<td>3,000,542</td>
 											</tr>
 											<tr>
-												<td>0.033545 €</td>
+												<td class="red">0.033545 €</td>
 												<td>1,500,542</td>
 												<td>1,500,542</td>
 											</tr>
 											<tr>
-												<td>0.033545 €</td>
+												<td class="red">0.033545 €</td>
 												<td>1,500,542</td>
 												<td>3,000,542</td>
 											</tr>
 											<tr>
-												<td>0.033545 €</td>
+												<td class="red">0.033545 €</td>
 												<td>1,500,542</td>
 												<td>3,000,542</td>
 											</tr>
@@ -602,62 +659,62 @@
 												<td colspan="3"></td>
 											</tr>
 											<tr>
-												<td>0.033545 €</td>
+												<td class="green">0.033545 €</td>
 												<td>1,500,542</td>
 												<td>1,500,542</td>
 											</tr>
 											<tr>
-												<td>0.033545 €</td>
+												<td class="green">0.033545 €</td>
 												<td>1,500,542</td>
 												<td>3,000,542</td>
 											</tr>
 											<tr>
-												<td>0.033545 €</td>
+												<td class="green">0.033545 €</td>
 												<td>1,500,542</td>
 												<td>3,000,542</td>
 											</tr>
 											<tr>
-												<td>0.033545 €</td>
+												<td class="green">0.033545 €</td>
 												<td>1,500,542</td>
 												<td>1,500,542</td>
 											</tr>
 											<tr>
-												<td>0.033545 €</td>
+												<td class="green">0.033545 €</td>
 												<td>1,500,542</td>
 												<td>3,000,542</td>
 											</tr>
 											<tr>
-												<td>0.033545 €</td>
+												<td class="green">0.033545 €</td>
 												<td>1,500,542</td>
 												<td>3,000,542</td>
 											</tr>
 											<tr>
-												<td>0.033545 €</td>
+												<td class="green">0.033545 €</td>
 												<td>1,500,542</td>
 												<td>1,500,542</td>
 											</tr>
 											<tr>
-												<td>0.033545 €</td>
+												<td class="green">0.033545 €</td>
 												<td>1,500,542</td>
 												<td>3,000,542</td>
 											</tr>
 											<tr>
-												<td>0.033545 €</td>
+												<td class="green">0.033545 €</td>
 												<td>1,500,542</td>
 												<td>3,000,542</td>
 											</tr>
 											<tr>
-												<td>0.033545 €</td>
+												<td class="green">0.033545 €</td>
 												<td>1,500,542</td>
 												<td>1,500,542</td>
 											</tr>
 											<tr>
-												<td>0.033545 €</td>
+												<td class="green">0.033545 €</td>
 												<td>1,500,542</td>
 												<td>3,000,542</td>
 											</tr>
 											<tr>
-												<td>0.033545 €</td>
+												<td class="green">0.033545 €</td>
 												<td>1,500,542</td>
 												<td>3,000,542</td>
 											</tr>
@@ -698,157 +755,157 @@
 										<tbody>
 											<tr>
 												<td>15:27:28</td>
-												<td><span class="buy">buy</span></td>
+												<td><span class="green">buy</span></td>
 												<td>0.054566</td>
 												<td>10,500<span>.25</span></td>
 											</tr>
 											<tr>
 												<td>15:27:28</td>
-												<td><span class="buy">buy</span></td>
+												<td><span class="green">buy</span></td>
 												<td>0.054566</td>
 												<td>10,500<span>.25</span></td>
 											</tr>
 											<tr>
 												<td>15:27:28</td>
-												<td><span class="buy">buy</span></td>
+												<td><span class="green">buy</span></td>
 												<td>0.054566</td>
 												<td>10,500<span>.25</span></td>
 											</tr>
 											<tr>
 												<td>15:27:28</td>
-												<td><span class="sell">sell</span></td>
+												<td><span class="red">sell</span></td>
 												<td>0.054566</td>
 												<td>10,500<span>.25</span></td>
 											</tr>
 											<tr>
 												<td>15:27:28</td>
-												<td><span class="buy">buy</span></td>
+												<td><span class="green">buy</span></td>
 												<td>0.054566</td>
 												<td>10,500<span>.25</span></td>
 											</tr>
 											<tr>
 												<td>15:27:28</td>
-												<td><span class="sell">sell</span></td>
+												<td><span class="red">sell</span></td>
 												<td>0.054566</td>
 												<td>10,500<span>.25</span></td>
 											</tr>
 											<tr>
 												<td>15:27:28</td>
-												<td><span class="sell">sell</span></td>
+												<td><span class="red">sell</span></td>
 												<td>0.054566</td>
 												<td>10,500<span>.25</span></td>
 											</tr>
 											<tr>
 												<td>15:27:28</td>
-												<td><span class="buy">buy</span></td>
+												<td><span class="green">buy</span></td>
 												<td>0.054566</td>
 												<td>10,500<span>.25</span></td>
 											</tr>
 											<tr>
 												<td>15:27:28</td>
-												<td><span class="buy">buy</span></td>
+												<td><span class="green">buy</span></td>
 												<td>0.054566</td>
 												<td>10,500<span>.25</span></td>
 											</tr>
 											<tr>
 												<td>15:27:28</td>
-												<td><span class="buy">buy</span></td>
+												<td><span class="green">buy</span></td>
 												<td>0.054566</td>
 												<td>10,500<span>.25</span></td>
 											</tr>
 											<tr>
 												<td>15:27:28</td>
-												<td><span class="buy">buy</span></td>
+												<td><span class="green">buy</span></td>
 												<td>0.054566</td>
 												<td>10,500<span>.25</span></td>
 											</tr>
 											<tr>
 												<td>15:27:28</td>
-												<td><span class="sell">sell</span></td>
+												<td><span class="red">sell</span></td>
 												<td>0.054566</td>
 												<td>10,500<span>.25</span></td>
 											</tr>
 											<tr>
 												<td>15:27:28</td>
-												<td><span class="buy">buy</span></td>
+												<td><span class="green">buy</span></td>
 												<td>0.054566</td>
 												<td>10,500<span>.25</span></td>
 											</tr>
 											<tr>
 												<td>15:27:28</td>
-												<td><span class="sell">sell</span></td>
+												<td><span class="red">sell</span></td>
 												<td>0.054566</td>
 												<td>10,500<span>.25</span></td>
 											</tr>
 											<tr>
 												<td>15:27:28</td>
-												<td><span class="sell">sell</span></td>
+												<td><span class="red">sell</span></td>
 												<td>0.054566</td>
 												<td>10,500<span>.25</span></td>
 											</tr>
 											<tr>
 												<td>15:27:28</td>
-												<td><span class="buy">buy</span></td>
+												<td><span class="green">buy</span></td>
 												<td>0.054566</td>
 												<td>10,500<span>.25</span></td>
 											</tr>
 											<tr>
 												<td>15:27:28</td>
-												<td><span class="buy">buy</span></td>
+												<td><span class="green">buy</span></td>
 												<td>0.054566</td>
 												<td>10,500<span>.25</span></td>
 											</tr>
 											<tr>
 												<td>15:27:28</td>
-												<td><span class="buy">buy</span></td>
+												<td><span class="green">buy</span></td>
 												<td>0.054566</td>
 												<td>10,500<span>.25</span></td>
 											</tr>
 											<tr>
 												<td>15:27:28</td>
-												<td><span class="buy">buy</span></td>
+												<td><span class="green">buy</span></td>
 												<td>0.054566</td>
 												<td>10,500<span>.25</span></td>
 											</tr>
 											<tr>
 												<td>15:27:28</td>
-												<td><span class="sell">sell</span></td>
+												<td><span class="red">sell</span></td>
 												<td>0.054566</td>
 												<td>10,500<span>.25</span></td>
 											</tr>
 											<tr>
 												<td>15:27:28</td>
-												<td><span class="buy">buy</span></td>
+												<td><span class="green">buy</span></td>
 												<td>0.054566</td>
 												<td>10,500<span>.25</span></td>
 											</tr>
 											<tr>
 												<td>15:27:28</td>
-												<td><span class="sell">sell</span></td>
+												<td><span class="red">sell</span></td>
 												<td>0.054566</td>
 												<td>10,500<span>.25</span></td>
 											</tr>
 											<tr>
 												<td>15:27:28</td>
-												<td><span class="sell">sell</span></td>
+												<td><span class="red">sell</span></td>
 												<td>0.054566</td>
 												<td>10,500<span>.25</span></td>
 											</tr>
 											<tr>
 												<td>15:27:28</td>
-												<td><span class="buy">buy</span></td>
+												<td><span class="green">buy</span></td>
 												<td>0.054566</td>
 												<td>10,500<span>.25</span></td>
 											</tr>
 											<tr>
 												<td>15:27:28</td>
-												<td><span class="sell">sell</span></td>
+												<td><span class="red">sell</span></td>
 												<td>0.054566</td>
 												<td>10,500<span>.25</span></td>
 											</tr>
 											<tr>
 												<td>15:27:28</td>
-												<td><span class="buy">buy</span></td>
+												<td><span class="green">buy</span></td>
 												<td>0.054566</td>
 												<td>10,500<span>.25</span></td>
 											</tr>
@@ -922,15 +979,136 @@
 											</div>
 										</div>
 										<div class="btns">
-											<a href="#" class="buy">Buy</a>
-											<a href="#" class="sell">Sell</a>
+											<a href="#" class="buy green-bg">Buy</a>
+											<a href="#" class="sell red-bg">Sell</a>
 										</div>
 									</form>
 								</div>
 								<div id="generate-orders" class="tab-item">
+
+<form>
+										<div class="flex-container">
+											<div>
+												<label class="flex">
+													Total XLM to buy:
+													<input type="text">
+												</label>
+												<label class="flex">
+													Start price:
+													<input type="text">
+												</label>
+													<label class="flex">
+													Martingale:
+													<input type="text">
+												</label>
+												</label>
+													<label class="flex">
+													Orders total:
+													<input type="text">
+												</label>
+												</label>
+													<label class="flex">
+													Price difference:
+													<input type="text">
+												</label>
+												</label>
+													<label class="flex">
+													Cost:
+													<input type="text">
+												</label>
+											</div>
+											<div>
+												<div class="flex checks">
+													  
+													<table class="preview-table">
+                            <thead>
+							<tr> <th style="border:none;" colspan="2">Preview</th> </tr>
+                              <tr>
+                                <th>Amount</th>
+                                <th>Price</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>23171,1438046222</td>
+                                <td>0,05454591</td>
+                              </tr>
+                              <tr>
+                                <td>23171,1438046222</td>
+                                <td>0,05454591</td>
+                              </tr>
+                              <tr>
+                                <td>23171,1438046222</td>
+                                <td>0,05454591</td>
+                              </tr>
+                              <tr>
+                                <td>23171,1438046222</td>
+                                <td>0,05454591</td>
+                              </tr>
+                              <tr>
+                                <td>23171,1438046222</td>
+                                <td>0,05454591</td>
+                              </tr>
+                              <tr>
+                                <td>23171,1438046222</td>
+                                <td>0,05454591</td>
+                              </tr>
+
+							<tr>
+                                <td style="text-align:right;color:green;">Total EUR:</td>
+                                <td style="color:green;">15000 eur</td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+												</div>
+												 
+											</div>
+										</div>
+										<div class="btns">
+											<a href="#" class="buy">Buy</a>
+											<a href="#" class="sell">Sell</a>
+										</div>
+									</form>
 									
 								</div>
 								<div id="place-alert" class="tab-item">
+
+
+<form>
+										<div class="flex-container">
+											<div>
+												
+												<label class="flex">
+													Alert type
+													<select type="select" style="color:#ccc;width: 155px;height: 35px;padding: 0 10px;border: 1px solid #3a3a3a;background: #1F1F1F;">
+												<option>Volume</option>
+												<option>Price</option>
+												
+												</select>
+												</label>
+												<label class="flex">
+													Type
+													<select type="select" style="color:#ccc;width: 155px;height: 35px;padding: 0 10px;border: 1px solid #3a3a3a;background: #1F1F1F;">
+												<option>Increase</option>
+												<option>Decrease</option>
+												</select>
+												</label>
+												<label class="flex">
+													Value in %
+													<input type="text">
+												</label>
+												
+											</div>
+											
+										</div>
+										<div class="btns">
+											<a href="#" class="buy">Place alert</a>
+										
+										</div>
+									</form>
+
+
 									
 								</div>
 							</div>
@@ -971,25 +1149,25 @@
 										<td>1 min</td>
 										<td>1,545,455.55</td>
 										<td>2,745,455.55</td>
-										<td><span class="pos">34.5 </span></td>
+										<td><span class="green">34.5 </span></td>
 									</tr>
 									<tr>
 										<td>5 min</td>
 										<td>1,545,455.55</td>
 										<td>1,145,455.55</td>
-										<td><span class="neg">14.7 </span></td>
+										<td><span class="red">14.7 </span></td>
 									</tr>
 									<tr>
 										<td>10 min</td>
 										<td>1,545,455.55</td>
 										<td>2,745,455.55</td>
-										<td><span class="pos">34.5 </span></td>
+										<td><span class="green">34.5 </span></td>
 									</tr>
 									<tr>
 										<td>15 min</td>
 										<td>1,545,455.55</td>
 										<td>1,145,455.55</td>
-										<td><span class="neg">14.7 </span></td>
+										<td><span class="red">14.7 </span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -1007,25 +1185,25 @@
 										<td>1 min</td>
 										<td>1,545,455.55</td>
 										<td>2,745,455.55</td>
-										<td><span class="pos">34.5 </span></td>
+										<td><span class="green">34.5 </span></td>
 									</tr>
 									<tr>
 										<td>5 min</td>
 										<td>1,545,455.55</td>
 										<td>1,145,455.55</td>
-										<td><span class="neg">14.7 </span></td>
+										<td><span class="red">14.7 </span></td>
 									</tr>
 									<tr>
 										<td>10 min</td>
 										<td>1,545,455.55</td>
 										<td>2,745,455.55</td>
-										<td><span class="pos">34.5 </span></td>
+										<td><span class="green">34.5 </span></td>
 									</tr>
 									<tr>
 										<td>15 min</td>
 										<td>1,545,455.55</td>
 										<td>1,145,455.55</td>
-										<td><span class="neg">14.7 </span></td>
+										<td><span class="red">14.7 </span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -1033,298 +1211,8 @@
 					</div>
 					 
 					
-
-	<!-- Вероятно, меню должно выезжать при каких-то условиях (но в коде нет и намёка на использование блока), используя CSS3 трансформации. Может быть вклинено в блок, если класс left-sidebar будет переписан, лишившись fixed'а и прочих свойств-->
-	<!--<div class="grid-stack-item"
-					data-gs-x="2" data-gs-y="20"
-					data-gs-width="2" data-gs-height="2"
-					id="left-sidebar-block"
-	>
-	<div class="grid-stack-item-content"> -->
-	<div class="left-sidebar">
-		<div class="first-block">
-			<div class="flex-container">
-				<div>
-					<p>Select market:</p>
-					<select name="" id="">
-						<option value="1">1</option>
-						<option value="1">1</option>
-						<option value="1">1</option>
-					</select>
-				</div>
-				<div>
-					<p>Select currency:</p>
-					<select name="" id="">
-						<option value="1">1</option>
-						<option value="1">1</option>
-						<option value="1">1</option>
-					</select>
-				</div>
-			</div>
-			<table>
-				<thead>
-					<tr>
-						<th>Currency</th>
-						<th>Balance</th>
-						<th>Rate</th>
-						<th>Total</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>XLM</td>
-						<td>1,500.400.56</td>
-						<td>0.01556456</td>
-						<td>25,656 EUR</td>
-					</tr>
-					<tr>
-						<td>BTC</td>
-						<td>0.045455</td>
-						<td>2204.54</td>
-						<td>150 EUR</td>
-					</tr>
-					<tr>
-						<td>LTC</td>
-						<td>154.45</td>
-						<td>43.5</td>
-						<td>42,354.56 EUR</td>
-					</tr>
-				</tbody>
-			</table>
-			<div class="flex-container">
-				<p>Total kraken balance: 64,345.54 €</p>
-				<p>All market balance: 184,345.54 €</p>
-			</div>
-		</div>
-		<div class="second-block">
-			<ul class="tab-list">
-				<li>
-					<a href="#">Open orders</a>
-				</li>
-				<li>
-					<a href="#">Positions</a>
-				</li>
-			</ul>
-			<div class="tab-container">
-				<div>
-					<table class="table2">
-						<thead>
-							<tr>
-								<th>Market</th>
-								<th>Type</th>
-								<th>Currency</th>
-								<th>Volume</th>
-								<th>Price</th>
-								<th>Cancel</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Kraken</td>
-								<td><span class="buy">Buy</span></td>
-								<td>XLM / EUR</td>
-								<td>1,500,000</td>
-								<td>0.01176600</td>
-								<td><span class="cancel">x</span></td>
-							</tr>
-							<tr>
-								<td>Poloniex</td>
-								<td><span class="sell">Sell</span></td>
-								<td>XLM / EUR</td>
-								<td>1,500,000</td>
-								<td>0.01176600</td>
-								<td><span class="cancel">x</span></td>
-							</tr>
-							<tr>
-								<td>Kraken</td>
-								<td><span class="buy">Buy</span></td>
-								<td>XLM / EUR</td>
-								<td>1,500,000</td>
-								<td>0.01176600</td>
-								<td><span class="cancel">x</span></td>
-							</tr>
-							<tr>
-								<td>Poloniex</td>
-								<td><span class="sell">Sell</span></td>
-								<td>XLM / EUR</td>
-								<td>1,500,000</td>
-								<td>0.01176600</td>
-								<td><span class="cancel">x</span></td>
-							</tr>
-							<tr>
-								<td>Poloniex</td>
-								<td><span class="sell">Sell</span></td>
-								<td>XLM / EUR</td>
-								<td>1,500,000</td>
-								<td>0.01176600</td>
-								<td><span class="cancel">x</span></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-		<div class="third-block">
-			<ul class="tab-list">
-				<li>
-					<a href="#trade-history2">Trade history</a>
-				</li>
-				<li>
-					<a href="#alerts-history2">Alerts history</a>
-				</li>
-			</ul>
-			<div class="tab-container">
-				<div id="trade-history2" class="tab-item">
-					<table class="table2">
-						<thead>
-							<tr>
-								<th>Market</th>
-								<th>Type</th>
-								<th>Currency</th>
-								<th>Volume</th>
-								<th>Price</th>
-								<th>Time</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Kraken</td>
-								<td><span class="sell">Sell</span></td>
-								<td>XLM / EUR</td>
-								<td>1,500</td>
-								<td>0.01176</td>
-								<td>17.58.45  12.07</td>
-							</tr>
-							<tr>
-								<td>Kraken</td>
-								<td><span class="sell">Sell</span></td>
-								<td>XLM / EUR</td>
-								<td>1,500</td>
-								<td>0.01176</td>
-								<td>17.58.45  12.07</td>
-							</tr>
-							<tr>
-								<td>Kraken</td>
-								<td><span class="buy">Buy</span></td>
-								<td>XLM / EUR</td>
-								<td>1,500</td>
-								<td>0.01176</td>
-								<td>17.58.45  12.07</td>
-							</tr>
-							<tr>
-								<td>Kraken</td>
-								<td><span class="sell">Sell</span></td>
-								<td>XLM / EUR</td>
-								<td>1,500</td>
-								<td>0.01176</td>
-								<td>17.58.45  12.07</td>
-							</tr>
-							<tr>
-								<td>Kraken</td>
-								<td><span class="sell">Sell</span></td>
-								<td>XLM / EUR</td>
-								<td>1,500</td>
-								<td>0.01176</td>
-								<td>17.58.45  12.07</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div id="alerts-history2" class="tab-item">
-					<table class="table2">
-						<thead>
-							<tr>
-								<th>Market</th>
-								<th>Currency</th>
-								<th>Type</th>
-								<th>Value</th>
-								<th>Time</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Kraken</td>
-								<td>XLM / EUR</td>
-								<td>Signal</td>
-								<td>01/10</td>
-								<td>17.58.45  12.07</td>
-							</tr>
-							<tr>
-								<td>Kraken</td>
-								<td>XLM / EUR</td>
-								<td>Price</td>
-								<td>0.045145</td>
-								<td>17.58.45  12.07</td>
-							</tr>
-							<tr>
-								<td>Kraken</td>
-								<td>XLM / EUR</td>
-								<td>Sell volume</td>
-								<td>15000000</td>
-								<td>17.58.45  12.07</td>
-							</tr>
-							<tr>
-								<td>Kraken</td>
-								<td>XLM / EUR</td>
-								<td>Buy volume</td>
-								<td>15000000</td>
-								<td>17.58.45  12.07</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-		<div class="signals">
-			<div class="flex-container">
-				<p>Signals</p>
-				<p>Level of signal:  <span>10 / 10</span></p>
-				<p>Avg.: <span class="sell">-5%</span></p>
-			</div>
-			<table class="table1">
-				<thead>
-					<tr>
-						<th>Market</th>
-						<th>Last price</th>
-						<th>High</th>
-						<th>Low</th>
-						<th>Change </th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Kraken</td>
-						<td>0.053763 €</td>
-						<td>0.0754654 €</td>
-						<td>0.3948859 €</td>
-						<td><span class="sell">-3,5%</span></td>
-					</tr>
-					<tr>
-						<td>Poloniex</td>
-						<td>0.053763 €</td>
-						<td>0.0754654 €</td>
-						<td>0.3948859 €</td>
-						<td><span class="sell">-6,5%</span></td>
-					</tr>
-					<tr>
-						<td>Kraken</td>
-						<td>0.053763 €</td>
-						<td>0.0754654 €</td>
-						<td>0.3948859 €</td>
-						<td><span class="sell">-3,5%</span></td>
-					</tr>
-					<tr>
-						<td>Poloniex</td>
-						<td>0.053763 €</td>
-						<td>0.0754654 €</td>
-						<td>0.3948859 €</td>
-						<td><span class="sell">-6,5%</span></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-
+		
+		
  
 	
 	
